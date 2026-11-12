@@ -1,13 +1,867 @@
-/* Стили страницы.
-   Скопируйте с предудущей практики. */
+/* ==========================================================
+   Барбершоп «Медь» — страница «Выбор даты и времени»
+   Цвета, размеры и шрифты взяты из макета в Figma
+   ========================================================== */
 
-* {
-  margin: 0;
-  padding: 0;
+/* ---------- Базовые стили ---------- */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-body {
-  min-height: 100vh;
-  font-family: sans-serif;
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+address {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.page {
+  min-width: 1280px;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 15px;
+  color: #f3ece3;
+  background-color: #121110;
+}
+
+/* ---------- Кнопки ---------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 32px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.button_size_s {
+  height: 44px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.button_type_primary {
+  color: #0b0a09;
+  background-color: #c8834f;
+}
+
+.button_type_primary:hover {
+  background-color: #e3a877;
+  box-shadow: 0 6px 20px rgba(200, 131, 79, 0.35);
+}
+
+.button_type_ghost {
+  color: #f3ece3;
+}
+
+.button_type_ghost:hover {
+  color: #e3a877;
+  background-color: #24211d;
+}
+
+/* ---------- Логотип ---------- */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.logo__sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid #c8834f;
+  border-radius: 50%;
+  color: #c8834f;
+  transition: background-color 0.2s;
+}
+
+.logo:hover .logo__sign {
+  background-color: #2e2219;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo__title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f3ece3;
+}
+
+.logo__subtitle {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.08em;
+  color: #a89e92;
+}
+
+/* ---------- Шапка ---------- */
+
+.header {
+  border-bottom: 1px solid #3a352e;
+  background-color: #121110;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  height: 84px;
+  margin: 0 auto;
+}
+
+.menu {
+  display: flex;
+  gap: 36px;
+}
+
+.menu__link {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #a89e92;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.menu__link:hover {
+  color: #f3ece3;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #f3ece3;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.phone__icon {
+  color: #c8834f;
+}
+
+.phone:hover {
+  color: #e3a877;
+}
+
+/* ---------- Шаги записи ---------- */
+
+.steps {
+  background-color: #1b1916;
+  border-bottom: 1px solid #3a352e;
+}
+
+.steps__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0 32px;
+}
+
+.steps__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.breadcrumbs__link {
+  color: #a89e92;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.breadcrumbs__link:hover {
+  color: #e3a877;
+}
+
+.breadcrumbs__icon {
+  color: #6e665c;
+}
+
+.breadcrumbs__current {
+  font-weight: 600;
+  color: #f3ece3;
+}
+
+.steps__counter {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e3a877;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.progress__step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #3a352e;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  color: #6e665c;
+  background-color: #24211d;
+}
+
+.progress__label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  color: #6e665c;
+}
+
+.progress__line {
+  flex-grow: 1;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #3a352e;
+}
+
+.progress__line_state_done {
+  background-color: #c8834f;
+}
+
+.progress__step_state_done .progress__circle {
+  border-color: #c8834f;
+  color: #0b0a09;
+  background-color: #c8834f;
+}
+
+.progress__step_state_done .progress__label {
+  color: #a89e92;
+}
+
+.progress__step_state_current .progress__circle {
+  border: 2px solid #c8834f;
+  color: #e3a877;
+  background-color: #2e2219;
+}
+
+.progress__step_state_current .progress__label {
+  font-weight: 700;
+  color: #f3ece3;
+}
+
+/* ---------- Основной блок ---------- */
+
+.booking {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 0 96px;
+}
+
+.booking__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking__title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 51px;
+  color: #f3ece3;
+}
+
+.booking__text {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #a89e92;
+}
+
+.chosen {
+  display: flex;
+  gap: 12px;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 8px 14px;
+  border: 1px solid #3a352e;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  color: #f3ece3;
+  background-color: #24211d;
+}
+
+.chip__icon {
+  color: #e3a877;
+}
+
+.booking__grid {
+  display: grid;
+  grid-template-columns: 680px 1fr;
+  gap: 24px;
+}
+
+/* ---------- Карточка ---------- */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border: 1px solid #3a352e;
+  border-radius: 20px;
+  background-color: #1b1916;
+}
+
+.card__title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 35px;
+  color: #f3ece3;
+}
+
+/* ---------- Календарь ---------- */
+
+.calendar {
+  gap: 20px;
+}
+
+.calendar__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calendar__arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #3a352e;
+  border-radius: 10px;
+  color: #a89e92;
+  background-color: #24211d;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.icon-button:hover {
+  border-color: #c8834f;
+  color: #e3a877;
+}
+
+.calendar__weekdays,
+.calendar__days {
+  display: grid;
+  grid-template-columns: repeat(7, 60px);
+  justify-content: space-between;
+}
+
+.calendar__weekday {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  color: #a89e92;
+}
+
+.calendar__weekday_type_weekend {
+  color: #e3a877;
+}
+
+.calendar__days {
+  row-gap: 8px;
+}
+
+.day {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  border: 1px solid #24211d;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f3ece3;
+  background-color: #24211d;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.day:hover {
+  border-color: #c8834f;
+  background-color: #2e2219;
+  color: #e3a877;
+}
+
+.day_type_empty {
+  border-color: transparent;
+  background-color: transparent;
+  cursor: default;
+}
+
+.day_type_empty:hover {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.day_state_past {
+  border-color: transparent;
+  color: #6e665c;
+  background-color: transparent;
+  cursor: default;
+}
+
+.day_state_past:hover {
+  border-color: transparent;
+  color: #6e665c;
+  background-color: transparent;
+}
+
+.day_state_today {
+  border: 1.5px solid #c8834f;
+}
+
+.day_state_full {
+  border-color: transparent;
+  color: #a89e92;
+  background-color: transparent;
+}
+
+.day_state_full::after {
+  content: "";
+  position: absolute;
+  bottom: 9px;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #e35d52;
+  transform: translateX(-50%);
+}
+
+.day_state_full:hover {
+  border-color: #3a352e;
+  color: #f3ece3;
+  background-color: transparent;
+}
+
+.day_state_selected,
+.day_state_selected:hover {
+  border-color: #c8834f;
+  font-weight: 700;
+  color: #0b0a09;
+  background-color: #c8834f;
+}
+
+.legend {
+  display: flex;
+  gap: 24px;
+  padding-top: 8px;
+}
+
+.legend__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #a89e92;
+}
+
+.legend__mark {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.legend__mark_type_selected {
+  background-color: #c8834f;
+}
+
+.legend__mark_type_today {
+  border: 1.5px solid #c8834f;
+}
+
+.legend__mark_type_full {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #e35d52;
+}
+
+/* ---------- Свободное время ---------- */
+
+.slots {
+  gap: 24px;
+}
+
+.slots__head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.slots__caption {
+  font-size: 14px;
+  line-height: 19px;
+  color: #a89e92;
+}
+
+.slots__group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slots__label {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a89e92;
+}
+
+.slots__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 14px;
+}
+
+.slot {
+  height: 48px;
+  border: 1px solid #3a352e;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f3ece3;
+  background-color: #24211d;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.slot:hover {
+  border-color: #c8834f;
+  color: #e3a877;
+  background-color: #2e2219;
+}
+
+/* Занятый слот — тёмный фон, приглушённый и зачёркнутый текст */
+.slot_state_busy,
+.slot_state_busy:hover {
+  border-color: #3a352e;
+  color: #6e665c;
+  text-decoration: line-through;
+  background-color: #121110;
+  cursor: not-allowed;
+}
+
+.slot_state_selected,
+.slot_state_selected:hover {
+  border-color: #c8834f;
+  font-weight: 700;
+  color: #0b0a09;
+  background-color: #c8834f;
+  box-shadow: 0 6px 20px rgba(200, 131, 79, 0.3);
+}
+
+/* ---------- Навигация по шагам ---------- */
+
+.step-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid #3a352e;
+}
+
+.step-nav__right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.summary__date {
+  font-size: 13px;
+  line-height: 18px;
+  color: #a89e92;
+}
+
+.summary__service {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  color: #f3ece3;
+}
+
+/* ---------- Подвал ---------- */
+
+.footer {
+  background-color: #0b0a09;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 0 32px;
+}
+
+.footer__columns {
+  display: flex;
+  gap: 80px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #3a352e;
+}
+
+.footer__about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 360px;
+}
+
+.footer__text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #a89e92;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.socials__item {
+  display: flex;
+}
+
+.socials__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #3a352e;
+  border-radius: 50%;
+  color: #a89e92;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.socials__link:hover {
+  border-color: #c8834f;
+  color: #e3a877;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer__heading {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #e3a877;
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer__item {
+  display: flex;
+}
+
+.footer__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 19px;
+  color: #a89e92;
+}
+
+.footer__row_type_phone {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #f3ece3;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer__row_type_phone:hover {
+  color: #e3a877;
+}
+
+.footer__icon {
+  color: #a89e92;
+}
+
+.footer__link {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer__link:hover {
+  color: #e3a877;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__copy {
+  font-size: 13px;
+  line-height: 18px;
+  color: #6e665c;
+}
+
+/* ==========================================================
+   Состояния для JavaScript (практика 2)
+   ========================================================== */
+
+.slots__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.slots__empty {
+  padding: 32px 24px;
+  border: 1px dashed #3a352e;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+  color: #a89e92;
+}
+
+.icon-button:disabled,
+.icon-button:disabled:hover {
+  border-color: #3a352e;
+  color: #3a352e;
+  cursor: default;
+}
+
+.button_state_disabled,
+.button_state_disabled:hover {
+  color: #6e665c;
+  background-color: #24211d;
+  box-shadow: none;
+  cursor: not-allowed;
 }
