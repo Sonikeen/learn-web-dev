@@ -738,6 +738,10 @@ svg {
   gap: 12px;
 }
 
+.socials__item {
+  display: flex;
+}
+
 .socials__link {
   display: flex;
   align-items: center;
@@ -775,6 +779,10 @@ svg {
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+.footer__item {
+  display: flex;
 }
 
 .footer__row {
