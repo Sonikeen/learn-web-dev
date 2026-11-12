@@ -1,14 +1,264 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Выбор даты и времени</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page">
-      <!-- Перенесите вашу верстку. Удалите статичные данные. Подключите скрипт -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выбор даты и времени — Барбершоп «Медь»</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+
+  <!-- Шапка -->
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="#">
+        <span class="logo__sign">
+          <svg class="logo__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="5" cy="5" r="2.5"/><circle cx="5" cy="15" r="2.5"/>
+            <path d="M16.67 3.33 6.77 13.23M12.06 12.07l4.6 4.6M6.77 6.77 10 10"/>
+          </svg>
+        </span>
+        <span class="logo__text">
+          <span class="logo__title">Медь</span>
+          <span class="logo__subtitle">барбершоп · с 2016</span>
+        </span>
+      </a>
+
+      <nav class="header__nav">
+        <ul class="menu">
+          <li class="menu__item"><a class="menu__link" href="#">Услуги</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">Мастера</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">Отзывы</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a class="phone" href="tel:+74951234567">
+          <svg class="phone__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          +7 (495) 123-45-67
+        </a>
+        <a class="button button_type_primary button_size_s" href="#">Записаться</a>
+      </div>
     </div>
-  </body>
+  </header>
+
+  <main class="main">
+
+    <!-- Шаги записи -->
+    <section class="steps">
+      <div class="steps__inner">
+        <div class="steps__top">
+          <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a class="breadcrumbs__link" href="#">Главная</a>
+            <svg class="breadcrumbs__icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.17" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.25 10.5 8.75 7l-3.5-3.5"/></svg>
+            <span class="breadcrumbs__current">Онлайн-запись</span>
+          </nav>
+          <p class="steps__counter">Шаг 3 из 5</p>
+        </div>
+
+        <ol class="progress">
+          <li class="progress__step progress__step_state_done">
+            <span class="progress__circle">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.33 4 6 11.33 2.67 8"/></svg>
+            </span>
+            <span class="progress__label">Мастер</span>
+          </li>
+          <li class="progress__line progress__line_state_done" aria-hidden="true"></li>
+          <li class="progress__step progress__step_state_done">
+            <span class="progress__circle">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.33 4 6 11.33 2.67 8"/></svg>
+            </span>
+            <span class="progress__label">Услуга</span>
+          </li>
+          <li class="progress__line progress__line_state_done" aria-hidden="true"></li>
+          <li class="progress__step progress__step_state_current">
+            <span class="progress__circle">3</span>
+            <span class="progress__label">Дата и время</span>
+          </li>
+          <li class="progress__line" aria-hidden="true"></li>
+          <li class="progress__step">
+            <span class="progress__circle">4</span>
+            <span class="progress__label">Контакты</span>
+          </li>
+          <li class="progress__line" aria-hidden="true"></li>
+          <li class="progress__step">
+            <span class="progress__circle">5</span>
+            <span class="progress__label">Подтверждение</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Выбор даты и времени -->
+    <section class="booking">
+      <div class="booking__intro">
+        <h1 class="booking__title">Выберите дату и время</h1>
+        <p class="booking__text">Показываем свободные окна мастера Дмитрия Орлова на ближайший месяц.</p>
+      </div>
+
+      <ul class="chosen">
+        <li class="chip">
+          <svg class="chip__icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.17" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11.67 12.25v-1.17a2.33 2.33 0 0 0-2.34-2.33H4.67a2.33 2.33 0 0 0-2.34 2.33v1.17"/><circle cx="7" cy="4.08" r="2.33"/>
+          </svg>
+          Дмитрий Орлов
+        </li>
+        <li class="chip">
+          <svg class="chip__icon" width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="5" cy="5" r="2.5"/><circle cx="5" cy="15" r="2.5"/>
+            <path d="M16.67 3.33 6.77 13.23M12.06 12.07l4.6 4.6M6.77 6.77 10 10"/>
+          </svg>
+          Мужская стрижка · 60 мин
+        </li>
+      </ul>
+
+      <div class="booking__grid">
+
+        <!-- Календарь -->
+        <article class="card calendar">
+          <div class="calendar__head">
+            <h2 class="card__title calendar__title" id="month-title"></h2>
+            <div class="calendar__arrows">
+              <button class="icon-button" type="button" id="prev-month" aria-label="Предыдущий месяц">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.25 13.5 6.75 9l4.5-4.5"/></svg>
+              </button>
+              <button class="icon-button" type="button" id="next-month" aria-label="Следующий месяц">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.75 13.5 11.25 9l-4.5-4.5"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <ul class="calendar__weekdays">
+            <li class="calendar__weekday">Пн</li>
+            <li class="calendar__weekday">Вт</li>
+            <li class="calendar__weekday">Ср</li>
+            <li class="calendar__weekday">Чт</li>
+            <li class="calendar__weekday">Пт</li>
+            <li class="calendar__weekday calendar__weekday_type_weekend">Сб</li>
+            <li class="calendar__weekday calendar__weekday_type_weekend">Вс</li>
+          </ul>
+
+          <div class="calendar__days" id="calendar-days">
+            <!-- Дни рисуются из script.js -->
+          </div>
+
+          <ul class="legend">
+            <li class="legend__item"><span class="legend__mark legend__mark_type_selected"></span>Выбранный день</li>
+            <li class="legend__item"><span class="legend__mark legend__mark_type_today"></span>Сегодня</li>
+            <li class="legend__item"><span class="legend__mark legend__mark_type_full"></span>Нет свободного времени</li>
+          </ul>
+        </article>
+
+        <!-- Свободное время -->
+        <article class="card slots">
+          <div class="slots__head">
+            <h2 class="card__title" id="slots-title"></h2>
+            <p class="slots__caption" id="slots-caption"></p>
+          </div>
+
+          <div class="slots__body" id="slots-body">
+            <!-- Слоты рисуются из script.js -->
+          </div>
+        </article>
+      </div>
+
+      <!-- Навигация по шагам -->
+      <div class="step-nav">
+        <a class="button button_type_ghost" href="#">Назад</a>
+        <div class="step-nav__right">
+          <div class="summary">
+            <p class="summary__date" id="summary-date"></p>
+            <p class="summary__service">Мужская стрижка · 2 200 ₽</p>
+          </div>
+          <a class="button button_type_primary" href="#" id="next-step">Далее: контакты</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__columns">
+        <div class="footer__about">
+          <a class="logo" href="#">
+            <span class="logo__sign">
+              <svg class="logo__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="5" cy="5" r="2.5"/><circle cx="5" cy="15" r="2.5"/>
+                <path d="M16.67 3.33 6.77 13.23M12.06 12.07l4.6 4.6M6.77 6.77 10 10"/>
+              </svg>
+            </span>
+            <span class="logo__text">
+              <span class="logo__title">Медь</span>
+              <span class="logo__subtitle">барбершоп · с 2016</span>
+            </span>
+          </a>
+          <p class="footer__text">Мужские стрижки, бритьё и уход за бородой. Варим кофе, ставим винил и никогда не торопимся.</p>
+          <ul class="socials">
+            <li class="socials__item"><a class="socials__link" href="#" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="1.5" width="15" height="15" rx="3.75"/><circle cx="9" cy="9" r="3"/><path d="M13.13 4.88h.01"/></svg>
+            </a></li>
+            <li class="socials__item"><a class="socials__link" href="#" aria-label="Telegram">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.5 1.5 8.25 9.75M16.5 1.5l-5.25 15-3-6.75-6.75-3 15-5.25z"/></svg>
+            </a></li>
+            <li class="socials__item"><a class="socials__link" href="#" aria-label="Написать нам">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.75 11.25a1.5 1.5 0 0 1-1.5 1.5h-9l-3 3v-12a1.5 1.5 0 0 1 1.5-1.5h10.5a1.5 1.5 0 0 1 1.5 1.5z"/></svg>
+            </a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h2 class="footer__heading">Контакты</h2>
+          <address class="footer__list">
+            <p class="footer__row">
+              <svg class="footer__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6.67c0 4.66-6 8.66-6 8.66s-6-4-6-8.66a6 6 0 0 1 12 0z"/><circle cx="8" cy="6.67" r="2"/></svg>
+              Москва, ул. Садовая, 15
+            </p>
+            <a class="footer__row footer__row_type_phone" href="tel:+74951234567">
+              <svg class="footer__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +7 (495) 123-45-67
+            </a>
+            <a class="footer__row footer__link" href="mailto:hello@med-barber.ru">
+              <svg class="footer__icon" width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.75 11.25a1.5 1.5 0 0 1-1.5 1.5h-9l-3 3v-12a1.5 1.5 0 0 1 1.5-1.5h10.5a1.5 1.5 0 0 1 1.5 1.5z"/></svg>
+              hello@med-barber.ru
+            </a>
+          </address>
+        </div>
+
+        <div class="footer__column">
+          <h2 class="footer__heading">Режим работы</h2>
+          <div class="footer__list">
+            <p class="footer__row">
+              <svg class="footer__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6.67"/><path d="M8 4v4l2.67 1.33"/></svg>
+              Пн–Пт: 9:00 – 21:00
+            </p>
+            <p class="footer__row">Сб–Вс: 10:00 – 19:00</p>
+          </div>
+        </div>
+
+        <nav class="footer__column">
+          <h2 class="footer__heading">Клиентам</h2>
+          <ul class="footer__list">
+            <li class="footer__item"><a class="footer__row footer__link" href="#">Услуги и цены</a></li>
+            <li class="footer__item"><a class="footer__row footer__link" href="#">Подарочные сертификаты</a></li>
+            <li class="footer__item"><a class="footer__row footer__link" href="#">Вакансии</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Барбершоп «Медь». Все права защищены.</p>
+        <a class="footer__copy footer__link" href="#">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
